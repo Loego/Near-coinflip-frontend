@@ -1,0 +1,38 @@
+.body {
+    width: 100%;
+
+    .menuItem {
+        margin: 0 30px;
+        cursor: pointer;
+    }
+
+    .container {
+        max-width: 1920px;
+        width: 90%;
+        margin-left: 5%;
+        margin: 0 auto;
+    }
+}
+
+.Button {
+    font-family: Acme;
+}
+
+@media (max-width: 870px) {
+    .body .menuItem {
+        margin: 0 10px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 620px) {
+    .body .menuItem {
+        display: none;
+    }
+}
+
+.money {
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+}

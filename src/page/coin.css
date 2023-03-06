@@ -1,0 +1,92 @@
+#coin {
+    position: relative;
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+}
+
+#coin div {
+    width: 100%;
+    height: 100%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.3),
+        0 12px 20px -10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.3),
+        0 12px 20px -10px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 0 45px rgba(255, 255, 255, 0.3),
+        0 12px 20px -10px rgba(0, 0, 0, 0.4);
+}
+
+.side-a {
+    background-color: #bb0000;
+    color: white;
+    text-align: center;
+}
+
+.side-b {
+    background-color: #3e3e3e;
+    color: white;
+    text-align: center;
+}
+
+#coin {
+    transition: -webkit-transform 1s ease-in;
+    transform-style: preserve-3d;
+}
+
+#coin div {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.side-a {
+    z-index: 100;
+}
+
+.side-b {
+    transform: rotateY(-180deg);
+}
+
+#coin.heads {
+    -webkit-animation: flipHeads 2s ease-out forwards;
+    -moz-animation: flipHeads 2s ease-out forwards;
+    -o-animation: flipHeads 2s ease-out forwards;
+    animation: flipHeads 2s ease-out forwards;
+}
+
+#coin.tails {
+    -webkit-animation: flipTails 2s ease-out forwards;
+    -moz-animation: flipTails 2s ease-out forwards;
+    -o-animation: flipTails 2s ease-out forwards;
+    animation: flipTails 2s ease-out forwards;
+}
+
+@keyframes flipHeads {
+    from {
+        -webkit-transform: rotateY(0);
+        -moz-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+
+    to {
+        -webkit-transform: rotateY(540deg);
+        -moz-transform: rotateY(540deg);
+        transform: rotateY(540deg);
+    }
+}
+
+@keyframes flipTails {
+    from {
+        -webkit-transform: rotateY(0);
+        -moz-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+
+    to {
+        -webkit-transform: rotateY(720deg);
+        -moz-transform: rotateY(720deg);
+        transform: rotateY(720deg);
+    }
+}
